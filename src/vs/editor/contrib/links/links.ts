@@ -86,7 +86,7 @@ const decoration = {
 };
 
 
-class LinkOccurrence {
+export class LinkOccurrence {
 
 	public static decoration(link: Link, useMetaKey: boolean): IModelDeltaDecoration {
 		return {
@@ -128,7 +128,7 @@ class LinkOccurrence {
 	}
 }
 
-class LinkDetector implements editorCommon.IEditorContribution {
+export class LinkDetector implements editorCommon.IEditorContribution {
 
 	private static ID: string = 'editor.linkDetector';
 
@@ -379,7 +379,7 @@ class LinkDetector implements editorCommon.IEditorContribution {
 	}
 }
 
-class OpenLinkAction extends EditorAction {
+export class OpenLinkAction extends EditorAction {
 
 	constructor() {
 		super({
@@ -401,11 +401,11 @@ class OpenLinkAction extends EditorAction {
 		for (let sel of selections) {
 			let link = linkDetector.getLinkOccurrence(sel.getEndPosition());
 
-		if (link) {
-			linkDetector.openLinkOccurrence(link, false);
+			if (link) {
+				linkDetector.openLinkOccurrence(link, false);
+			}
 		}
 	}
-}
 }
 
 registerEditorContribution(LinkDetector);
