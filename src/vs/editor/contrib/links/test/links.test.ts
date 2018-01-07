@@ -4,9 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 'use strict';
 
-import sinon = require('sinon');
-// import * as sinon from 'sinon';
 import * as assert from 'assert';
+import * as sinon from 'sinon';
 import { Selection } from 'vs/editor/common/core/selection';
 import { createTestCodeEditor, TestCodeEditor } from 'vs/editor/test/browser/testCodeEditor';
 import { OpenLinkAction, LinkDetector } from  'vs/editor/contrib/links/links';
